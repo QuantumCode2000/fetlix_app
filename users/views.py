@@ -22,6 +22,7 @@ class LoginView(View):
         """
         POST METHOD
         """
+        # del form del html le pasamos los datos usando una funcion de django users
         user = authenticate(request, username=request.POST['username'],
                             password=request.POST['password'])
         if user is not None:
@@ -29,9 +30,14 @@ class LoginView(View):
             return HttpResponse(content=b'Success')
         return self.get(request)
 class LogoutView(View):
+    """
+    Clase logout para deslogear un usuario en django user
+    """
     def get(self, request):
+        """
+        Pasamos el request que tiene el usuario y si esta autenticado lo saca 
+        y si no ,redirecciona a login
+        """
         if request.user.is_authenticated:
             logout(request)
             return redirect('login')
-        
-            
