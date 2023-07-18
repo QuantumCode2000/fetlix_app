@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Episodes</title>
+	</head>
+
+	<body>
+		<style>
+			span {
+				color: blue;
+			}
+		</style>
+		{% for episode in episodes %}
+		<div class="episode__container">
+			<span>
+				{{episode.name}}
+			</span>
+			<br>
+			<p>
+				{{episode.number}}
+			</p>
+		</div>
+		{%endfor%}
+	</body>
+
+</html>
