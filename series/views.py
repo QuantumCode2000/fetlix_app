@@ -46,10 +46,13 @@ class SerieView(View):
             }
             return render(request,'series.html',context=context)
         return redirect('login')
+    
+# documentacion de los mixin
 """
 ! La siguiente clase EpisodeView(View) es igual a la 
 ! clase EpisodeView(LoginRequiredMixin,View)
 """
+
 # class EpisodeView(View):
 #     """
 #     Vista de Serie
@@ -64,7 +67,10 @@ class SerieView(View):
 #             }
 #             return render(request,'episodes.html',context=context)
 #         return redirect('login')
-
+"""
+la siguiente clase es la clase que nos hara lo mismo que si
+agregamos una condicianal dentro de la clase para ejecutar la misma
+"""
 class EpisodeView(LoginRequiredMixin,View):
     """
     Esta clase con el parametro LoginRequiredMixin es igual al poner
