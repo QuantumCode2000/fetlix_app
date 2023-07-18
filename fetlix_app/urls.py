@@ -19,6 +19,7 @@ from django.urls import path
 # from series.views import HelloWorld
 from series.views import SerieView,EpisodeView
 from users.views import LoginView, LogoutView
+from series.api.views import SerieApiView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,7 @@ urlpatterns = [
     path('series/',SerieView.as_view()),
     path('episodes/<int:serie_id>',EpisodeView.as_view(),name='episodes'),
     path('login/' ,LoginView.as_view(),name='login'),
-    path('logout/' ,LogoutView.as_view(),name='logout')
+    path('logout/' ,LogoutView.as_view(),name='logout'),
+    path('api/series/',SerieApiView.as_view())
 
 ]
