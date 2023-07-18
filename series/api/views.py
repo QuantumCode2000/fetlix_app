@@ -20,6 +20,8 @@ from rest_framework.viewsets import ViewSet
     
     
 # utilizaremos el viewset
+# los viewset son metodos que se adantan mejor a las apirest
+# con metodos como list,retrieve,create
 class SerieApiView(ViewSet):
     def list(self, request):
         series = SerieSerializer(Serie.objects.all(),many=True)
@@ -32,4 +34,5 @@ class SerieApiView(ViewSet):
         serie_serializer.is_valid(raise_exception=True)
         Serie.objects.create(title=serie_serializer.validated_data['title'], description=request.POST['description'])
         return self.list(request)
-    
+#! este viewset debe anadirse a un router 
+#! un router es un componente que es capaz de entender las peticiones al metodo que nos conviene
