@@ -159,3 +159,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Por defecto:'/accounts/login/'
+#La URL o el patrón de URL con nombre donde las solicitudes se 
+# redirigen para iniciar sesión cuando se usa el login_required()
+# decorador, LoginRequiredMixino AccessMixin.
+
+# si no estas logeado esto redirige directamente si usas el loginrequiredmixin
+LOGIN_URL = '/login/'
